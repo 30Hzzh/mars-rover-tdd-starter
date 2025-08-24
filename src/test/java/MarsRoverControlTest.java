@@ -27,4 +27,15 @@ public class MarsRoverControlTest {
         assertEquals("(0, 0) W", marsRover.getPosition());
     }
 
+    @Test
+    public void test_turn_right() {
+        // Given
+        MarsRover marsRover = new MarsRover(0, 0, "N");
+
+        // When
+        marsRover.turnRight();
+
+        // Then
+        assertEquals("(0, 0) E", marsRover.getPosition());
+    }
 }
