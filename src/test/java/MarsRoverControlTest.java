@@ -1,9 +1,17 @@
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 public class MarsRoverControlTest {
     @Test
-    public void test_move_control() {
-        // This is a placeholder for the actual test implementation.
-        // You can add assertions and logic to test the MarsRoverControl functionality.
+    public void test_move_forward() {
+        // Given
+        MarsRover marsRover = new MarsRover(0, 0, "N");
+
+        // When
+        marsRover.moveForward("M");
+
+        // Then
+        assertEquals("(0, 1) N", marsRover.getPosition());
     }
 }
