@@ -13,6 +13,10 @@ public class MarsRover {
         this.direction = direction;
     }
 
+    public MarsRover(String direction) {
+        this(0, 0, direction);
+    }
+
     public String getPosition() {
         return "(" + xPosition + ", " + yPosition + ") " + direction;
     }
