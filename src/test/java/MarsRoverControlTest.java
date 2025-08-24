@@ -62,4 +62,18 @@ public class MarsRoverControlTest {
         // Then
         assertEquals("(2, 2) E", marsRover.getPosition());
     }
+
+    @Test
+    public void test_execute_invalid_command() {
+        // Given
+        MarsRover marsRover = new MarsRover(0, 0, "N");
+        String command = "MMXRMFMLMMQBB"; // Invalid command
+        // When
+        String result = marsRover.executeCommand(command);
+
+        //Then
+        String invalidCommand = "XFQ";
+        assertEquals(invalidCommand, result);
+        assertEquals("(2, 2) N", marsRover.getPosition());
+    }
 }
