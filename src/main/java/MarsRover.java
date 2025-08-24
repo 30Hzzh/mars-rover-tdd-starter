@@ -1,7 +1,7 @@
 public class MarsRover {
-    private int xPosition;
-    private int yPosition;
-    private String direction;
+    private final int xPosition;
+    private final int yPosition;
+    private final String direction;
 
     public MarsRover(Integer xPosition, Integer yPosition, String direction) {
         if (xPosition == null || yPosition == null) {
