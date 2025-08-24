@@ -50,4 +50,16 @@ public class MarsRoverControlTest {
         // Then
         assertEquals("(0, -1) N", marsRover.getPosition());
     }
+
+    @Test
+    public void test_execute_multiple_commands() {
+        // Given
+        MarsRover marsRover = new MarsRover(0, 0, "N");
+        String commands = "MMRMM";
+        // When
+        marsRover.executeCommand(commands);
+
+        // Then
+        assertEquals("(2, 2) E", marsRover.getPosition());
+    }
 }
