@@ -112,25 +112,35 @@ public class MarsRover {
         }
     }
 
-    public void executeCommand(String command) {
-        for(char c : command.toCharArray() ) {
+    public String executeCommand(String command) {
+        StringBuilder validCommands = new StringBuilder();
+        for (char c : command.toCharArray()) {
             String newCommand = String.valueOf(c);
-            if (newCommand.equals("M")) {
-                moveForward();
-            }
+            try {
+                if (newCommand.equals("M")) {
+                    moveForward();
+                }
 
-            if (newCommand.equals("L")) {
-                turnLeft();
-            }
+                if (newCommand.equals("L")) {
+                    turnLeft();
+                }
 
-            if (newCommand.equals("R")) {
-                turnRight();
-            }
+                if (newCommand.equals("R")) {
+                    turnRight();
+                }
 
-            if (newCommand.equals("B")) {
-                moveBackward();
+                if (newCommand.equals("B")) {
+                    moveBackward();
+                }
+
+                if (!newCommand.matches("[MLRMB]")) {
+                    validCommands.append(newCommand);
+                }
+            } catch (IllegalArgumentException e) {
+                System.out.println(e.getMessage());
             }
         }
+        return validCommands.toString();
         // Additional methods for moving the rover would go here
     }
 }
