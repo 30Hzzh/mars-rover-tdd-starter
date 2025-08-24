@@ -17,6 +17,7 @@ public class MarsRoverCreateTest {
         // Then
         assertEquals("(1, 2) N", marsRover.getPosition());
     }
+
     @Test
     public void test_create_rover_with_invalid_direction() {
         // Given
@@ -32,6 +33,7 @@ public class MarsRoverCreateTest {
         // Then
         assertEquals("Invalid direction: X", exception.getMessage());
     }
+
     @Test
     public void test_create_rover_with_null_position() {
         // Given
@@ -43,5 +45,15 @@ public class MarsRoverCreateTest {
             new MarsRover(null, null, direction);
         });
         assertEquals("Position cannot be null", exception.getMessage());
+    }
+
+    @Test
+    public void test_create_rover_without_position() {
+        // Given
+        String direction = "N"; // Valid direction
+        // When Create
+        MarsRover marsRover = new MarsRover(0, 0, direction);
+        // Then
+        assertEquals("(0, 0) N", marsRover.getPosition());
     }
 }
