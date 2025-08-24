@@ -3,7 +3,10 @@ public class MarsRover {
     private int yPosition;
     private String direction;
 
-    public MarsRover(int xPosition, int yPosition, String direction) {
+    public MarsRover(Integer xPosition, Integer yPosition, String direction) {
+        if (xPosition == null || yPosition == null) {
+            throw new NullPointerException("Position cannot be null");
+        }
         if (!direction.matches("N| E| S| W")) throw new IllegalArgumentException("Invalid direction: " + direction);
         this.xPosition = xPosition;
         this.yPosition = yPosition;
