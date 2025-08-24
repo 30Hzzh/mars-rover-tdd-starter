@@ -7,9 +7,9 @@ public class MarsRoverControlTest {
     public void test_move_forward() {
         // Given
         MarsRover marsRover = new MarsRover(0, 0, "N");
-
+        String command = "M";
         // When
-        marsRover.moveForward("M");
+        marsRover.executeCommand(command);
 
         // Then
         assertEquals("(0, 1) N", marsRover.getPosition());
@@ -19,9 +19,9 @@ public class MarsRoverControlTest {
     public void test_turn_left() {
         // Given
         MarsRover marsRover = new MarsRover(0, 0, "N");
-
+        String command = "L";
         // When
-        marsRover.turnLeft();
+        marsRover.executeCommand(command);
 
         // Then
         assertEquals("(0, 0) W", marsRover.getPosition());
@@ -31,9 +31,9 @@ public class MarsRoverControlTest {
     public void test_turn_right() {
         // Given
         MarsRover marsRover = new MarsRover(0, 0, "N");
-
+        String command = "R";
         // When
-        marsRover.turnRight();
+        marsRover.executeCommand(command);
 
         // Then
         assertEquals("(0, 0) E", marsRover.getPosition());
@@ -43,9 +43,9 @@ public class MarsRoverControlTest {
     public void test_move_backward() {
         // Given
         MarsRover marsRover = new MarsRover(0, 0, "N");
-
+        String command = "B";
         // When
-        marsRover.moveBackward();
+        marsRover.executeCommand(command);
 
         // Then
         assertEquals("(0, -1) N", marsRover.getPosition());

@@ -34,7 +34,7 @@ public class MarsRover {
         return "(" + xPosition + ", " + yPosition + ") " + direction;
     }
 
-    public void moveForward(String command) {
+    public void moveForward() {
         String direction = this.direction;
 
         if (direction.equals("N")) {
@@ -112,5 +112,22 @@ public class MarsRover {
         }
     }
 
-    // Additional methods for moving the rover would go here
+    public void executeCommand(String command) {
+        if (command.equals("M")) {
+            moveForward();
+        }
+
+        if (command.equals("L")) {
+            turnLeft();
+        }
+
+        if (command.equals("R")) {
+            turnRight();
+        }
+
+        if (command.equals("B")) {
+            moveBackward();
+        }
+        // Additional methods for moving the rover would go here
+    }
 }
