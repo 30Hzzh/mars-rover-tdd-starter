@@ -92,5 +92,25 @@ public class MarsRover {
         }
     }
 
+    public void moveBackward() {
+        String direction = this.direction;
+
+        if (direction.equals("N")) {
+            this.yPosition = this.yPosition - 1;
+        }
+
+        if (direction.equals("E")) {
+            this.xPosition = this.xPosition - 1;
+        }
+
+        if (direction.equals("S")) {
+            this.yPosition = this.yPosition + 1;
+        }
+
+        if (direction.equals("W")) {
+            this.xPosition = this.xPosition + 1;
+        }
+    }
+
     // Additional methods for moving the rover would go here
 }
