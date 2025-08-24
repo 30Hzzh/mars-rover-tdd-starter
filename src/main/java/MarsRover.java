@@ -1,7 +1,7 @@
 public class MarsRover {
-    private final int xPosition;
-    private final int yPosition;
-    private final String direction;
+    private int xPosition;
+    private int yPosition;
+    private String direction;
 
     public MarsRover(Integer xPosition, Integer yPosition, String direction) {
         if (xPosition == null || yPosition == null) {
@@ -13,12 +13,45 @@ public class MarsRover {
         this.direction = direction;
     }
 
+    public int getXPosition() {
+        return xPosition;
+    }
+
+    public int getYPosition() {
+        return yPosition;
+    }
+
+    public String getDirection() {
+        return direction;
+    }
+
+
     public MarsRover(String direction) {
         this(0, 0, direction);
     }
 
     public String getPosition() {
         return "(" + xPosition + ", " + yPosition + ") " + direction;
+    }
+
+    public void moveForward(String command) {
+        String direction = this.direction;
+
+        if (direction.equals("N")) {
+            this.yPosition = this.yPosition + 1;
+        }
+
+        if (direction.equals("E")) {
+            this.xPosition = this.xPosition + 1;
+        }
+
+        if (direction.equals("S")) {
+            this.yPosition = this.yPosition - 1;
+        }
+
+        if (direction.equals("W")) {
+            this.xPosition = this.xPosition - 1;
+        }
     }
 
     // Additional methods for moving the rover would go here
