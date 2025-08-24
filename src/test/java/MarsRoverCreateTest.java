@@ -32,4 +32,16 @@ public class MarsRoverCreateTest {
         // Then
         assertEquals("Invalid direction: X", exception.getMessage());
     }
+    @Test
+    public void test_create_rover_with_null_position() {
+        // Given
+        String direction = "N"; // Valid direction
+        // When Create
+
+        // Then
+        Exception exception = assertThrows(NullPointerException.class, () -> {
+            new MarsRover(null, null, direction);
+        });
+        assertEquals("Position cannot be null", exception.getMessage());
+    }
 }
