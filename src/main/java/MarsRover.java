@@ -113,20 +113,23 @@ public class MarsRover {
     }
 
     public void executeCommand(String command) {
-        if (command.equals("M")) {
-            moveForward();
-        }
+        for(char c : command.toCharArray() ) {
+            String newCommand = String.valueOf(c);
+            if (newCommand.equals("M")) {
+                moveForward();
+            }
 
-        if (command.equals("L")) {
-            turnLeft();
-        }
+            if (newCommand.equals("L")) {
+                turnLeft();
+            }
 
-        if (command.equals("R")) {
-            turnRight();
-        }
+            if (newCommand.equals("R")) {
+                turnRight();
+            }
 
-        if (command.equals("B")) {
-            moveBackward();
+            if (newCommand.equals("B")) {
+                moveBackward();
+            }
         }
         // Additional methods for moving the rover would go here
     }
