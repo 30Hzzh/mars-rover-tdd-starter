@@ -17,4 +17,19 @@ public class MarsRoverCreateTest {
         // Then
         assertEquals("(1, 2) N", marsRover.getPosition());
     }
+    @Test
+    public void test_create_rover_with_invalid_direction() {
+        // Given
+        int xPosition = 0;
+        int yPosition = 0;
+        String direction = "X"; // Invalid direction
+
+        // When
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+            new MarsRover(xPosition, yPosition, direction);
+        });
+
+        // Then
+        assertEquals("Invalid direction: X", exception.getMessage());
+    }
 }
