@@ -38,4 +38,16 @@ public class MarsRoverControlTest {
         // Then
         assertEquals("(0, 0) E", marsRover.getPosition());
     }
+
+    @Test
+    public void test_move_backward() {
+        // Given
+        MarsRover marsRover = new MarsRover(0, 0, "N");
+
+        // When
+        marsRover.moveBackward();
+
+        // Then
+        assertEquals("(0, -1) N", marsRover.getPosition());
+    }
 }
