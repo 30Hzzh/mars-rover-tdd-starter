@@ -54,5 +54,25 @@ public class MarsRover {
         }
     }
 
+    public void turnLeft() {
+        String direction = this.direction;
+        if (direction.equals("N")) {
+            this.direction = "W";
+        }
+
+        if (direction.equals("W")) {
+            this.direction = "S";
+        }
+
+        if (direction.equals("S")) {
+            this.direction = "E";
+        }
+
+        if (direction.equals("E")) {
+            this.direction = "N";
+        }
+    }
+
+
     // Additional methods for moving the rover would go here
 }
