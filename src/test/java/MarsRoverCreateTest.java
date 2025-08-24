@@ -26,9 +26,7 @@ public class MarsRoverCreateTest {
         String direction = "X"; // Invalid direction
 
         // When
-        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
-            new MarsRover(xPosition, yPosition, direction);
-        });
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> new MarsRover(xPosition, yPosition, direction));
 
         // Then
         assertEquals("Invalid direction: X", exception.getMessage());
@@ -41,9 +39,7 @@ public class MarsRoverCreateTest {
         // When Create
 
         // Then
-        Exception exception = assertThrows(NullPointerException.class, () -> {
-            new MarsRover(null, null, direction);
-        });
+        Exception exception = assertThrows(NullPointerException.class, () -> new MarsRover(null, null, direction));
         assertEquals("Position cannot be null", exception.getMessage());
     }
 
